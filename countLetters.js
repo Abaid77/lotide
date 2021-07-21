@@ -12,18 +12,18 @@ const assertEqual = function(actual, expected) {
 const countLetters = function(sentence) {
   const results = {};
 
-  for (letter of sentence) {
+  for (const letter of sentence) {
     if (letter === " ") {
-      } else {
+    } else {
       if (results[letter]) {
         results[letter] += 1;
       } else {
         results[letter] = 1;
-        }
+      }
     }
   }
   return results;
-}
+};
 // TEST CASES
 
-console.log(countLetters("hello"));
+console.log(countLetters("hello there"));
