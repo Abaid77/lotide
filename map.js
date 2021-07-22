@@ -24,4 +24,24 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
+const words = ["ground", "control", "to", "major", "tom"];
+const words2 = ["stick", "glove", "puck", "helmet", "net"];
+const words3 = ["1", "2", "3", "4", "5"];
+
+const map = function(array, callback) {
+  const results = [];
+  for (let item of array) {
+    results.push(callback(item));
+  }
+  return results;
+};
+
+const results1 = map(words, word => word[0]);
+const results2 = map(words2, word => word[0]);
+const results3 = map(words3, word => word[0]);
+
+
+
+assertArraysEqual(results1, [ 'g', 'c', 't', 'm', 't' ]);
+assertArraysEqual(results2, [ 's', 'g', 'p', 'h', 'n' ]);
+assertArraysEqual(results3, [ '1', '2', '3', '4', '5' ]);
